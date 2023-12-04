@@ -16,4 +16,4 @@ https://docs.google.com/spreadsheets/d/19JmbFhPwqb_NZPzJGkuDSPquwvK9HBtlMVNgrxmw
 
 
 # Tree Cisco Packet Tracer | VLSM |
-<img width="6492" alt="VLSM Tree" src="https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/b517f8cf-7779-4e9b-9db2-33301c4d23c7">
+<img width="6491" alt="VLSM Tree" src="https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/77e402b4-8a3b-47fe-bc18-1a2a245d8416">
