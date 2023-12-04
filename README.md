@@ -7,6 +7,9 @@ Nama | NRP | Github
 Adiba Zalfa Camilla | 5027211060 | https://github.com/dibazalfa
 Wiridlangit Suluh Jiwangga | 5027211064 | https://github.com/wiridlangit
 
+# Spreadsheet
+https://docs.google.com/spreadsheets/d/19JmbFhPwqb_NZPzJGkuDSPquwvK9HBtlMVNgrxmwAjY/edit?pli=1#gid=1936683207
+
 # Topologi
 ### Cisco Packet Tracer | VLSM |
 ![Topologi_Modul4_Subnet_Final](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/41efa918-f229-4eae-b723-450ff6e48a83)
