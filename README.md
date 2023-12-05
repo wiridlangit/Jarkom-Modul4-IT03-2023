@@ -1,4 +1,4 @@
-# Jarkom-Modul4-IT03-2023
+![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/cce7b98e-0c47-4ae7-bde0-f631b42be1a2)# Jarkom-Modul4-IT03-2023
 
 # Kelompok: IT03
 ### Anggota: 
@@ -6,6 +6,9 @@ Nama | NRP | Github
 --- | --- | --- |
 Adiba Zalfa Camilla | 5027211060 | https://github.com/dibazalfa
 Wiridlangit Suluh Jiwangga | 5027211064 | https://github.com/wiridlangit
+
+# IP Prefix
+`10.65`
 
 # Spreadsheet
 https://docs.google.com/spreadsheets/d/19JmbFhPwqb_NZPzJGkuDSPquwvK9HBtlMVNgrxmwAjY/edit?pli=1#gid=1936683207
@@ -26,14 +29,54 @@ https://docs.google.com/spreadsheets/d/19JmbFhPwqb_NZPzJGkuDSPquwvK9HBtlMVNgrxmw
 # Rute Subnet
 ![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/7106a1af-5024-49ee-8cee-fc3686ccfc4c)
 
-# VLSM Pada CPT 
-## Pembagian IP VLSM
-![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/35ae9568-74e5-412f-8868-eb31bed35754)
+# VLSM
+VLSM digunakan pada Cisco Packet Tracer (CPT)
 
 ## Tree VLSM
+Berikut adalah Tree yang digunakan sebagai visualisasi VLSM.
 <img width="6491" alt="VLSM Tree" src="https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/0fb14b81-bbf1-44ae-8045-617f6b5ad8ec">
 
-# CIDR Pada GNS3
+## Pembagian IP VLSM
+Berikut adalah pembagian IP pada VLSM.
+![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/35ae9568-74e5-412f-8868-eb31bed35754)
+
+## Konfigurasi CPT
+Konfigurasi IP pada CPT bisa dilakukan dengan cara sebagai berikut:
+
+1. Setelah menentukan semua subnet, pertama buka node router aura lalu masukan IP berdasarkan arah eth pada subnet yang dituju:
+![Screenshot 2023-12-05 190136](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/d741aad8-dc37-43a8-8951-83978e7b6719)
+Arah yang dituju sebagai contoh pertama yaitu mengarah ke subnet A1 dengan melalui eth1/0
+
+2. Pilih pada bagian eth1/0 lalu dalam IP Configuration masukan IP `10.65.24.113`. IP `10.65.24.113` didapatkan dengan melihat data pembagian IP subnet A1 pada sheets `10.65.24.112` lalu ditambahkan 1 digit pada angka belakangnya. Untuk netmask disamakan seperti pada sheets.
+![Screenshot 2023-12-05 190153](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/b7a3a9fc-d577-4677-8ec4-c717162c088b)
+
+3. Lalu pilih node router lainnya pada A1, yaitu Frieren. Pilih arah eth yang menuju ke A1 dalam hal ini eth1/0 lalu lakukan konfigurasi dengan cara yang sama yaitu menambahkan 1 digit lagi pada IP sebelumnya  `10.65.24.114`.
+![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/a1d933ed-9c34-454e-ae48-d814c6409efe)
+Lakukan hal yang sama untuk setiap node dan arah eth pada topologi.
+
+## Routing CPT
+Konfigurasi routing untuk menghubungkan antara subnet.
+
+1. Sebagai langkah awal buka node router lalu pilih pada section Routing > Static.
+2. Lalu pada bagian Network dan Mask masukan sesuai data subnet yang dituju dan diisi dengan data yang sama pada sheets.
+3. Next Hop diisi dengan node router terdekat yang berperan menjadi "jembatan".
+
+Sebagai contoh, node router Aura ingin menuju client Lakekorridor. Aura harus melalui subnet A1 dan singgah di frieren lalu melanjutkan perjalanan melalui subnet A2 hingga sampai ke Lakekorridor.
+
+1. Pada node router Aura masukan kolom Network dan Mask subnet A2 yaitu `10.65.24.64` dan `255.255.255.224`. Pada kolom Next Hop masukan IP eth1/0 pada node router Frieren yaitu `10.65.24.114`.
+![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/da3e40ab-404e-4c34-b375-a018dabf5b21)
+
+2. Pada node router Frieren masukan kolom Network dan Masuk dengan IP `0.0.0.0` dan Next Hop yaitu `10.65.24.113` sesuai dengan eth1/0 subnet A1 pada node router Aura.
+![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/f847f6bc-2da5-47ee-a0de-45889eae5c81)
+Dengan ini subnet A1 dan A2 sudah terhubung.
+
+3. Lakukan hal ini pada setiap router yang mewakili client dan ingin dihubungkan.
+
+*Notes: Memilih IP `0.0.0.0` dilakukan ketika Router mengarah kembali ke Router utama yaitu Aura. Sebagai contoh dari node router Flamme ke Frieren pada Network dan Mask menggunakan IP `0.0.0.0` karena mengarah kembali ke node router utama yaitu Aura.
+
+# CIDR
+CIDR digunakan pada GNS3
+
 ## Penggabungan Subnet 
 
 ### Step I
