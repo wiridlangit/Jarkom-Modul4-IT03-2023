@@ -31,7 +31,7 @@ https://docs.google.com/spreadsheets/d/19JmbFhPwqb_NZPzJGkuDSPquwvK9HBtlMVNgrxmw
 ![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/35ae9568-74e5-412f-8868-eb31bed35754)
 
 ## Tree VLSM
-<img width="6491" alt="VLSM Tree" src="https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/77e402b4-8a3b-47fe-bc18-1a2a245d8416">
+<img width="6491" alt="VLSM Tree" src="https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/0fb14b81-bbf1-44ae-8045-617f6b5ad8ec">
 
 # CIDR Pada GNS3
 ## Penggabungan Subnet 
