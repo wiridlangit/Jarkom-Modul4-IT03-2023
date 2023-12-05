@@ -1,5 +1,3 @@
-![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/cce7b98e-0c47-4ae7-bde0-f631b42be1a2)# Jarkom-Modul4-IT03-2023
-
 # Kelompok: IT03
 ### Anggota: 
 Nama | NRP | Github 
