@@ -17,23 +17,23 @@ https://docs.google.com/spreadsheets/d/19JmbFhPwqb_NZPzJGkuDSPquwvK9HBtlMVNgrxmw
 - [CIDR](#cidr)
 
 # Topologi
-### Cisco Packet Tracer
+### Cisco Packet Tracer | VLSM |
 ![Topologi_Modul4_Subnet_Final](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/41efa918-f229-4eae-b723-450ff6e48a83)
 
-### GNS3 
+### GNS3 | CIDR |
 ![WhatsApp Image 2023-12-02 at 02 34 45_9b027623](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/00166b77-e52e-416c-934f-a9977de13a3f)
 
 # Rute Subnet
 ![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/7106a1af-5024-49ee-8cee-fc3686ccfc4c)
 
-# VLSM
+# VLSM Pada CPT 
 ## Pembagian IP VLSM
 ![image](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/35ae9568-74e5-412f-8868-eb31bed35754)
 
 ## Tree VLSM
 <img width="6491" alt="VLSM Tree" src="https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/113527799/77e402b4-8a3b-47fe-bc18-1a2a245d8416">
 
-# CIDR 
+# CIDR Pada GNS3
 ## Penggabungan Subnet 
 
 ### Step I
