@@ -134,7 +134,7 @@ Didapatkan netmask akhir pada I1 adalah `/14`
 ![IT03_CIDR Tree](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/e20b3b63-d8bd-49ad-9410-7af41951ef5e)
 
 ## Routing
-Lakukan konfigurasi berikut, 
+Lakukan konfigurasi berikut pada GNS3, 
 #### Aura
 ```
 auto eth0
@@ -229,13 +229,217 @@ iface eth0 inet static
 	netmask 255.255.255.252
 	gateway 10.65.16.1
 ```
+#### Lugner
+```
+#A12 Eisen-Lugner
+auto eth0
+iface eth0 inet static
+	address 10.65.8.2
+	netmask 255.255.255.252
+
+#A13 Lugner-Switch-TurkRegion
+auto eth1
+iface eth1 inet static
+	address 10.65.0.1
+	netmask 255.255.252.0
+
+#A14 Lugner-Switch-GrobeForest
+auto eth2
+iface eth2 inet static
+	address 10.65.4.1
+	netmask 255.255.255.0
+```
+#### Turk Region
+```
+#A13 Lugner-Switch-TurkRegion
+auto eth0
+iface eth0 inet static
+	address 10.65.0.2
+	netmask 255.255.255.252
+	gateway 10.65.0.1
+```
+#### Grobe Forest
+```
+#A14 Lugner-Switch-GrobeForest
+auto eth0
+iface eth0 inet static
+	address 10.65.4.2
+	netmask 255.255.255.252
+	gateway 10.65.4.1
+```
+#### Linie
+```
+#A15 Linie-Eisen
+auto eth0
+iface eth0 inet static
+	address 10.65.96.2
+	netmask 255.255.255.252
+
+#A19 Linie-Switch-GranzChannel
+auto eth1
+iface eth1 inet static
+	address 10.65.80.1
+	netmask 255.255.254.0
+
+#A16 Linie-Lawie
+auto eth2
+iface eth2 inet static
+	address 10.65.68.9
+	netmask 255.255.255.252
+```
+#### Granz Channel
+```
+#A19 Linie-GranzChannel
+auto eth0
+iface eth0 inet static
+	address 10.65.80.2
+	netmask 255.255.254.0
+	gateway 10.65.80.1
+```
+#### Sein
+```
+#A18 Sein-Heiter
+auto eth0
+iface eth0 inet static
+	address 10.65.64.2
+	netmask 255.255.252.0
+	gateway 10.65.64.1
+```
+#### Heiter
+```
+#A17 Heiter-Switch-Lawine-Switch-BredRegion
+auto eth0
+iface eth0 inet static
+	address 10.65.68.2
+	netmask 255.255.255.192
+	gateway 10.65.68.1
+
+#A18 Heiter-Switch-Sein-Switch-RiegelCanyon
+auto eth1
+iface eth1 inet static
+	address 10.65.64.1
+	netmask 255.255.252.0
+```
+#### Lawine
+```
+#A16 Lawine-Linie
+auto eth0
+iface eth0 inet static
+	address 10.65.68.10
+	netmask 255.255.255.252
+
+#A17 Lawine-Switch-Heiter-Switch-BredRegion
+auto eth1
+iface eth1 inet static
+	address 10.65.68.1
+	netmask 255.255.255.192
+```
+#### Richter
+```
+#A10 Richter-Switch-Eisen
+auto eth0
+iface eth0 inet static
+	address 10.65.32.2
+	netmask 255.255.255.248
+	gateway 10.65.32.1
+```
+#### RiegelCanyon
+```
+#A18
+auto eth0
+iface eth0 inet static
+	address 10.65.64.3
+	netmask 255.255.252.0
+	gateway 10.65.64.1
+```
+#### Fern
+```
+#A4 Fern-Flamme
+auto eth0
+iface eth0 inet static
+	address 10.66.8.2
+	netmask 255.255.255.252
+
+#A5 Fern-Switch-Laub-Switch-Appetit
+auto eth1
+iface eth1 inet static
+	address 10.66.0.1
+	netmask 255.255.248.0
+```
+#### Flamme
+```
+#A3 Flamme-Frieren
+auto eth0
+iface eth0 inet static
+	address 10.66.32.1
+	netmask 255.255.255.252
+
+#A4 Fern-Flamme
+auto eth1
+iface eth1 inet static
+	address 10.66.8.1
+	netmask 255.255.255.252
+```
+#### Frieren
+```
+#A1 Frieren-Aura
+auto eth0
+iface eth0 inet static
+	address 10.66.128.2
+	netmask 255.255.255.252
+
+#A2 Frieren-Lake
+auto eth1
+iface eth1 inet static
+	address 10.66.64.1
+	netmask 255.255.255.252
+
+#A3 Frieren-Flamme
+auto eth2
+iface eth2 inet static
+	address 10.66.32.2
+	netmask 255.255.255.252
+```
+#### LaubHills
+```
+auto eth0
+iface eth0 inet static
+	address 10.66.0.2
+	netmask 255.255.248.0
+	gateway 10.66.0.1
+```
+#### AppetitRegion
+```
+auto eth0
+iface eth0 inet static
+	address 10.66.0.3
+	netmask 255.255.248.0
+	gateway 10.66.0.1
+```
 Kemudian, lakukan routing 
 #### Aura
+```
 route add -net 10.67.0.0 netmask 255.255.255.0 gw 10.67.1.2
 route add -net 10.65.16.0 netmask 255.255.255.252 gw 10.65.128.2 
-
+```
 #### Denken
+```
 route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.67.1.1
-
+```
 #### Eisen
+```
 route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.65.128.1
+route add -net 10.65.80.0 netmask 255.255.254.0 gw 10.65.96.2
+```
+#### Linie
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.65.96.1
+```
+#### Lugner
+```
+route add -net 10.65.80.0 netmask 255.255.254.0 gw 10.65.8.1
+```
+
+### Contoh Output Routing 
+ping GranzChannel - TurkRegion
+![WhatsApp Image 2023-12-06 at 12 34 57_f41bfae2](https://github.com/wiridlangit/Jarkom-Modul4-IT03-2023/assets/103043684/a6ea77ab-03b2-4d37-869e-74cb3b26b402)
